@@ -198,13 +198,33 @@ JPEG compression. The ground truth is kept in `*.gt.json`.
 
 Reports are in `reports/`.
 
+## Results (synthetic set: 36 pages = 12 letters × clean/mild/hard; full reports in `reports/`)
+
+| profile | page CER | paragraph CER | English CER | table TEDS-S | reading order τ | s/page (GTX 1650 box) |
+|---|---|---|---|---|---|---|
+| dev-cpu, 36 pages | 0.170 | 0.151 | 0.064 | 1.000 | 0.908 | 18.8 |
+| dev-cpu, 12 mild pages | 0.146 | 0.138 | 0.073 | 1.000 | 0.898 | 17.4 |
+| dev-vlm (Qwen3-VL-2B Q4), 12 mild pages | 0.138 | 0.110 | 0.056 | 1.000 | 0.929 | 160 |
+
+Other results:
+* Stamp recall is 1.00, logo 1.00, signature 0.39.
+* With the VLM, date extraction rises from 40% to 65% and doc-number extraction from 50% to 67%.
+* UVDoc on the hard subset: CER 0.201 → 0.193 at +3 s/page, so it is off by default and on in
+  `gpu-server`.
+
+A Vietnamese project report is in [reports/BAO_CAO_vi.md](reports/BAO_CAO_vi.md).
+
 ## Known limitations
 
 * **Handwriting.** Tesseract and Paddle cannot read Ruqaa/cursive handwriting. Qwen3-VL-2B gets
   short notes roughly right. Handwritten blocks are always flagged `needs_review`. A
   handwriting LoRA on the 8B model is the intended fix.
 * **Calligraphic / decorative text** (e.g. Thuluth headers, basmala with full tashkeel). The classic
-  engines garble it; prefer the VLM on the GPU server and expect review.
+  engines garble it; prefer the VLM on the GPU server and expect review. Tesseract also degrades on
+  fonts with heavy stacked ligatures (e.g. Amiri: ~0.45 CER on some pages vs ~0.1 on Naskh/Sans fonts).
+* **Arabic-Indic digits (٠-٩) with Tesseract** are often misread (e.g. `٣/٣٧٤٥` → `P/PVEO`).
+  PaddleOCR reads them better but drops `/` and `:`. The agreement check flags these lines for
+  review rather than guessing. Dates/numbers on such pages need the VLM (8B) or human review.
 * **Small VLM (2B Q4)** sometimes adds tashkeel that isn't in the image, and misreads or
   reorders Arabic-Indic numbers. This is mitigated by cross-checks and flags, not solved. Use 8B
   in production.

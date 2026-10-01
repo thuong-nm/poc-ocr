@@ -145,7 +145,8 @@ PROFILES: dict[str, dict] = {
     "dev-cpu": {},
     # 4 GB GPU dev box: Qwen3-VL-2B (Ollama) as primary, Tesseract as cross-check.
     "dev-vlm": {
-        "recognition": {"primary": "vlm", "secondary": "tesseract",
+        # tables: ruling-line grid + Tesseract (TEDS-S 1.0) beats the 2B model's HTML (measured TEDS ~0.2)
+        "recognition": {"primary": "vlm", "secondary": "tesseract", "primary_by_type": {"table": "tesseract"},
                         "vlm": {"backend": "openai", "base_url": "http://localhost:11434/v1",
                                 "model": "qwen3-vl:2b-instruct-q4_K_M"}},
     },

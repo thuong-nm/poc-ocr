@@ -184,6 +184,7 @@ class Pipeline:
             blocks = self._recognize_regions(page, regions, ink, hint, assets_dir, out_json.parent, dbg)
         with tm.stage("postprocess"):
             blocks = self._split_number_date_lines(blocks)
+            blocks = self._drop_text_duplicates(blocks)
             for b in blocks:
                 b.type = PP.refine_type(b)
             self._positional_types(blocks, W, H)
@@ -347,6 +348,28 @@ class Pipeline:
                 b.html = res.html
                 b.direction = direction  # type: ignore[assignment]
 
+    @staticmethod
+    def _drop_text_duplicates(blocks: list[Block]) -> list[Block]:
+        """Overlapping layout boxes can yield the same text twice: drop a block whose text is
+        contained in an overlapping larger block's text."""
+        from rapidfuzz import fuzz
+
+        from .layout import containment
+
+        drop = set()
+        texts = [PP.normalize_for_compare(b.text or "") for b in blocks]
+        for i, a in enumerate(blocks):
+            if not texts[i] or a.type not in TEXT_TYPES:
+                continue
+            for j, b in enumerate(blocks):
+                if i == j or j in drop or not texts[j] or len(texts[j]) <= len(texts[i]):
+                    continue
+                ov = max(containment(a.bbox.as_list(), b.bbox.as_list()), containment(b.bbox.as_list(), a.bbox.as_list()))
+                if ov > 0.2 and fuzz.partial_ratio(texts[i], texts[j]) >= 90:
+                    drop.add(i)
+                    break
+        return [b for k, b in enumerate(blocks) if k not in drop]
+
     def _split_number_date_lines(self, blocks: list[Block]) -> list[Block]:
         """A layout box holding 'number / date / date' lines becomes one block per line."""
         out = []
@@ -387,6 +410,18 @@ class Pipeline:
                 ink_pt = b.line_height_px / px_per_mm * 2.83465
                 f = cfg.line_height_to_pt_latin if b.lang == "en" else cfg.line_height_to_pt_ar
                 st.size_pt = round(ink_pt * f * 2) / 2
+        # body text of a letter uses one size: clamp outliers (merged lines inflate the estimate)
+        body_sizes = sorted(b.style.size_pt for b in blocks if b.type == "paragraph" and b.style.size_pt)
+        if body_sizes:
+            med = body_sizes[len(body_sizes) // 2]
+            for b in blocks:
+                if b.style.size_pt and b.type in ("paragraph", "list", "doc_number", "date"):
+                    if abs(b.style.size_pt - med) > 0.25 * med:
+                        b.style.size_pt = med
+                elif b.style.size_pt and b.type == "title":
+                    b.style.size_pt = min(max(b.style.size_pt, med), med * 1.6)
+        for b in blocks:
+            st = b.style
             if b.type not in TEXT_TYPES:
                 st.align = self._pos_align(b, cl, cr, direction)
                 continue

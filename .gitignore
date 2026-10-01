@@ -11,3 +11,6 @@ models/
 *.docx
 *.pdf
 scratch*
+# generated evaluation outputs (re-create with scripts/evaluate.py); summaries reports/*.md|json are kept
+reports/*_pred/
+reports/*.log
