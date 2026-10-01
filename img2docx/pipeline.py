@@ -354,7 +354,8 @@ class Pipeline:
             lines = [l for l in (b.text or "").split("\n") if l.strip()]
             if b.type in ("paragraph", "header", "title") and len(lines) >= 2:
                 kinds = [PP.line_kind(l) for l in lines]
-                if sum(k is not None for k in kinds) >= max(2, len(lines) - 0):
+                # >= 2 number/date lines: split (a misread label on one line must not block it)
+                if sum(k is not None for k in kinds) >= 2 and sum(k is not None for k in kinds) >= len(lines) - 1:
                     eng_lines = getattr(b, "_lines", []) or []
                     n = len(lines)
                     for k, (ln, kind) in enumerate(zip(lines, kinds)):
