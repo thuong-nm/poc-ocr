@@ -297,6 +297,11 @@ class Pipeline:
                     agree = agreement(res.text or "", res2.text or "", ignore_digits=ign)
             b._lines = res.lines  # transient, used for line splitting / justification
             engine_conf = res.confidence
+            if res2 is not None and not (res.text or "").strip() and (res2.text or "").strip() and (res2.confidence or 0) >= 0.6:
+                # primary produced nothing but the cross-check engine read the region confidently
+                b.text, b.source_engine, b._lines = res2.text, res2.engine, res2.lines
+                engine_conf, agree = res2.confidence * 0.85, None
+                flags.append(f"primary engine returned no text; using {res2.engine}")
             if res2 is not None and pname == "vlm" and res2.text:
                 # small VLMs misread / reorder digit groups in RTL lines (verified on Qwen3-VL-2B):
                 # for digit-heavy lines a confident classic engine wins

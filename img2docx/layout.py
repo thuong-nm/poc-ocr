@@ -245,6 +245,10 @@ class LayoutAnalyzer:
             r.source += "+graphic"
         if r.type not in ("figure", "logo", "stamp"):
             return r
+        if r.type == "figure" and _is_texty(ink[y0:y1, x0:x1], col[y0:y1, x0:x1], W):
+            r.type = "paragraph"  # detector called a text line (e.g. calligraphic basmala) an image
+            r.source += "+texty"
+            return r
         sub = col[y0:y1, x0:x1] > 0
         ik = ink[y0:y1, x0:x1] > 0
         frac = float((sub & ik).sum() / max(1, ik.sum())) if sub.size else 0.0  # coloured share of the ink
@@ -315,9 +319,16 @@ class LayoutAnalyzer:
     def _uncovered(self, regions: list[Region], ink: np.ndarray, col: np.ndarray, W: int, H: int) -> list[Region]:
         mask = remove_rules(ink)
         image_like = {"stamp", "logo", "figure", "signature", "handwritten_note"}
+        col_d = cv2.dilate(col, np.ones((5, 5), np.uint8))
         for r in regions:
             x0, y0, x1, y1 = (int(v) for v in r.bbox)
             pad = 4
+            if r.type in ("stamp", "signature"):
+                # stamps/signatures overlap printed text: hide only their coloured ink so black
+                # text underneath (e.g. the signatory's name) still gets its own text region
+                sl = (slice(max(0, y0 - pad), y1 + pad), slice(max(0, x0 - pad), x1 + pad))
+                mask[sl][col_d[sl] > 0] = 0
+                continue
             mask[max(0, y0 - pad):y1 + pad, max(0, x0 - pad):x1 + pad] = 0
         new: list[Region] = []
         # 1) coloured-ink blobs (stamps over text, signatures, handwriting not found by the model)
@@ -364,18 +375,25 @@ class LayoutAnalyzer:
         if r.type not in ("figure", "stamp", "signature", "handwritten_note") or r.type == "logo":
             return [r]
         x0, y0, x1, y1 = (int(v) for v in r.bbox)
-        sub = col[y0:y1, x0:x1]
+        sub = col[y0:y1, x0:x1].copy()
         if sub.size == 0 or sub.mean() / 255 < 0.003:
             return [r]
-        cm = cv2.morphologyEx(sub, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (W // 60, W // 60)))
+        out: list[Region] = []
+        # round rubber stamps first (Hough), then whatever coloured ink remains (signature, notes)
+        for (cx, cy, rad) in _find_circles(sub, W):
+            bb = (float(max(0, x0 + cx - rad)), float(max(0, y0 + cy - rad)), float(x0 + cx + rad), float(y0 + cy + rad))
+            out.append(Region("stamp", bb, r.score, r.source + "+circle", raw_label=r.raw_label))
+            cv2.circle(sub, (int(cx), int(cy)), int(rad * 1.08), 0, -1)
+        if out and sub.mean() / 255 < 0.002:
+            return out
+        cm = cv2.morphologyEx(sub, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (W // 90, W // 90)))
         n, lab, st, _ = cv2.connectedComponentsWithStats(cm, 8)
         blobs = [st[i] for i in range(1, n) if st[i][2] > W * 0.03 and st[i][3] > H * 0.008]
-        if len(blobs) < 2:
+        if len(blobs) < 2 and not out:
             if len(blobs) == 1 and r.type in ("figure", "handwritten_note", "signature"):
                 bx, by, bw, bh, _ = blobs[0]
                 r.type = self._classify_colored(sub[by:by + bh, bx:bx + bw] > 0, (x0 + bx, y0 + by, bw, bh), W, H)
             return [r]
-        out = []
         for bx, by, bw, bh, _ in blobs:
             bb = (float(x0 + bx), float(y0 + by), float(x0 + bx + bw), float(y0 + by + bh))
             typ = self._classify_colored(sub[by:by + bh, bx:bx + bw] > 0, (x0 + bx, y0 + by, bw, bh), W, H)
@@ -397,6 +415,38 @@ class LayoutAnalyzer:
         if biggest > 0.55 * w and n - 1 <= 4 and w > 0.1 * W:
             return "signature"
         return "handwritten_note"
+
+
+def _find_circles(colored: np.ndarray, W: int) -> list[tuple[float, float, float]]:
+    """Ring-shaped stamps in a coloured-ink mask (HoughCircles on the blurred mask)."""
+    if colored.size == 0 or min(colored.shape) < W * 0.08:
+        return []
+    m = cv2.GaussianBlur(colored, (0, 0), 2)
+    c = cv2.HoughCircles(m, cv2.HOUGH_GRADIENT, dp=1.5, minDist=W * 0.1, param1=80, param2=40,
+                         minRadius=int(W * 0.04), maxRadius=int(W * 0.14))
+    if c is None:
+        return []
+    out = []
+    for cx, cy, rad in c[0][:3]:
+        # verify: enough coloured ink along the circumference (a real ring)
+        ang = np.linspace(0, 2 * np.pi, 180, endpoint=False)
+        xs = np.clip((cx + rad * np.cos(ang)).astype(int), 0, colored.shape[1] - 1)
+        ys = np.clip((cy + rad * np.sin(ang)).astype(int), 0, colored.shape[0] - 1)
+        ring = cv2.dilate(colored, np.ones((7, 7), np.uint8))[ys, xs] > 0
+        if ring.mean() > 0.55:
+            out.append((float(cx), float(cy), float(rad)))
+    return out
+
+
+def _is_texty(ink_crop: np.ndarray, col_crop: np.ndarray, W: int) -> bool:
+    """A detector 'image' that is really a line of (black) text: thin wide line boxes, little colour."""
+    if ink_crop.size == 0 or (col_crop > 0).mean() > 0.02 or _is_graphic(ink_crop):
+        return False
+    lines = text_lines(ink_crop, W)
+    if not lines:
+        return False
+    covered = sum(b[2] - b[0] for b in lines) / max(1, ink_crop.shape[1])
+    return covered > 0.5 and all((b[3] - b[1]) < 0.06 * W for b in lines)
 
 
 def _main_row_cluster(rows: np.ndarray, weight: np.ndarray) -> tuple[int, int]:

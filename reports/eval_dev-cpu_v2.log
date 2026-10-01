@@ -35,3 +35,57 @@ WARNING:img2docx:QA: document boundary not detected; assuming the photo is alrea
 WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
 [22/36] synth_en_0108_clean: page CER 0.088  TEDS 1.000  20.6s
 [23/36] synth_en_0108_hard: page CER 0.142  TEDS 0.909  22.8s
+[24/36] synth_en_0108_mild: page CER 0.136  TEDS 1.000  28.3s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[25/36] synth_mixed_0109_clean: page CER 0.302  TEDS 0.613  23.8s
+[26/36] synth_mixed_0109_hard: page CER 0.369  TEDS 0.585  24.9s
+[27/36] synth_mixed_0109_mild: page CER 0.314  TEDS 0.631  25.4s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[28/36] synth_mixed_0110_clean: page CER 0.264  TEDS 0.596  22.6s
+[29/36] synth_mixed_0110_hard: page CER 0.163  TEDS 0.670  24.6s
+[30/36] synth_mixed_0110_mild: page CER 0.227  TEDS 0.703  21.0s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[31/36] synth_mixed_0111_clean: page CER 0.239  TEDS 0.517  22.7s
+[32/36] synth_mixed_0111_hard: page CER 0.209  TEDS 0.634  20.8s
+[33/36] synth_mixed_0111_mild: page CER 0.170  TEDS 0.535  21.3s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[34/36] synth_mixed_0112_clean: page CER 0.332  TEDS 0.554  28.8s
+[35/36] synth_mixed_0112_hard: page CER 0.253  TEDS 0.654  24.9s
+[36/36] synth_mixed_0112_mild: page CER 0.238  TEDS 0.689  20.2s
+# img2docx evaluation — dev-cpu — 36 pages
+
+Engines: `layout`=PP-DocLayout_plus-L, `primary:tesseract`=tesseract-5.5.3:ara+eng
+
+## Summary
+
+| metric | value |
+|---|---|
+| pages | 36 |
+| text blocks | 468 |
+| CER (micro, strict) | 0.204 |
+| CER (diacritics-insensitive) | 0.206 |
+| WER (mean) | 0.453 |
+| page CER (order-sensitive) | 0.180 |
+| block type accuracy | 0.750 |
+| table TEDS / TEDS-S | 0.788 / 1.000 (n=36) |
+| reading order Kendall τ | 0.898 |
+| date extraction acc | 0.400 |
+| doc-number extraction acc | 0.500 |
+| image element recall | logo 1.00, signature 0.19, stamp 0.81 |
+| pages flagged needs_review | 0.97 |
+| runtime s/page (mean) | 35.2 |
+
+## CER by block type
+
+| block type | n | CER | CER no-diac | WER | type acc |
+|---|---|---|---|---|---|
+| date | 60 | 0.458 | 0.461 | 0.633 | 0.58 |
+| doc_number | 36 | 0.558 | 0.558 | 0.542 | 0.53 |
+| footer | 36 | 0.436 | 0.436 | 0.477 | 0.58 |
+| handwritten_note | 36 | 0.667 | 0.667 | 1.315 | 0.33 |
+| header | 72 | 0.001 | 0.001 | 0.008 | 1.00 |
+| paragraph | 180 | 0.164 | 0.163 | 0.330 | 0.90 |
+| title | 48 | 0.401 | 0.438 | 0.625 | 0.62 |
+
+
+report: reports/eval_dev-cpu_v2.md  (1267s)

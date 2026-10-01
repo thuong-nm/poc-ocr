@@ -15,6 +15,15 @@ from ..tables import cells_to_html, detect_grid, mark_header_rows
 from .base import UNREADABLE, LineResult, RecognitionResult, Recognizer, RegionHints, strip_bidi_controls
 
 
+def _has_suspicious_latin(text: str) -> bool:
+    """Arabic-dominant line containing short Latin tokens (typical ara+eng confusion)."""
+    import re
+
+    ar = sum(1 for c in text if "\u0600" <= c <= "\u06ff")
+    lat = re.findall(r"[A-Za-z]+", text)
+    return ar > 10 and any(len(w) <= 4 for w in lat) and sum(len(w) for w in lat) < 0.25 * ar
+
+
 def resolve_tesseract_cmd(cmd: str | None) -> str:
     cands = [cmd, os.environ.get("TESSERACT_CMD"), shutil.which("tesseract")]
     # local conda env next to the running interpreter
@@ -134,6 +143,13 @@ class TesseractRecognizer(Recognizer):
                     break
             if best is None:
                 continue
+            # ara+eng sometimes emits low-confidence Latin junk words inside Arabic lines
+            # ('Se', 'Ue' for علماً): retry the line with Arabic only and keep the more confident read
+            if "+" in langs and _has_suspicious_latin(best[0]):
+                img = cv2.copyMakeBorder(sub, 15, 15, 20, 20, cv2.BORDER_CONSTANT, value=int(np.percentile(sub, 95)))
+                alt = self._ocr(img, psm, "ara", 1.0, border=(20, 15))
+                if alt[0].strip() and alt[1] > best[1]:
+                    best = alt
             text, conf, lines = best
             n = len(text)
             tot_c += conf * n; tot_n += n

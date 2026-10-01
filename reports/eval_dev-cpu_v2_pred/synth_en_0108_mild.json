@@ -1,0 +1,687 @@
+{
+ "schema_version": "1.0.0",
+ "source": {
+  "path": "data/synth/synth_en_0108_mild.jpg",
+  "sha256": "28ede57669086b37f46d1223a249810f1d5cc46ea48bfbf489bff9995fa7b759",
+  "width_px": 1753,
+  "height_px": 2384
+ },
+ "page": {
+  "width_px": 1697,
+  "height_px": 2400,
+  "width_mm": 210.0,
+  "height_mm": 297.0,
+  "dpi": 205.3,
+  "direction": "ltr",
+  "rotation_applied": 0,
+  "paper": "A4"
+ },
+ "blocks": [
+  {
+   "id": "b001",
+   "type": "header",
+   "bbox": {
+    "x0": 157.39004516601562,
+    "y0": 117.14408111572266,
+    "x1": 595.8908081054688,
+    "y1": 198.5132598876953
+   },
+   "order": 0,
+   "text": "Ministry of Culture\nNational Heritage Directorate",
+   "html": null,
+   "image_path": null,
+   "lang": "en",
+   "direction": "ltr",
+   "style": {
+    "align": "left",
+    "size_pt": 7.0,
+    "bold": null
+   },
+   "confidence": 0.976,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:header",
+   "layout_score": 0.899,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "Ministry of Culture\nNational Heritage Directorate",
+     "html": null,
+     "confidence": 0.96,
+     "mean_logprob": null,
+     "seconds": 0.653
+    },
+    {
+     "engine": "paddleocr:arabic_PP-OCRv5_mobile_rec/en_PP-OCRv5_mobile_rec",
+     "text": "Ministry of Culture\nNational Heritage Directorate",
+     "html": null,
+     "confidence": 0.9926055936763684,
+     "mean_logprob": null,
+     "seconds": 1.106
+    }
+   ],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 33.0
+  },
+  {
+   "id": "b002",
+   "type": "logo",
+   "bbox": {
+    "x0": 749.525390625,
+    "y0": 91.37826538085938,
+    "x1": 948.6800537109375,
+    "y1": 289.5258483886719
+   },
+   "order": 1,
+   "text": null,
+   "html": null,
+   "image_path": "synth_en_0108_mild_assets/r001_logo.png",
+   "lang": null,
+   "direction": null,
+   "style": {
+    "align": "center",
+    "size_pt": null,
+    "bold": null
+   },
+   "confidence": null,
+   "source_engine": null,
+   "layout_source": "PP-DocLayout_plus-L:header+graphic",
+   "layout_score": 0.884,
+   "alternatives": [],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": null
+  },
+  {
+   "id": "b003",
+   "type": "header",
+   "bbox": {
+    "x0": 1232.73876953125,
+    "y0": 117.13070678710938,
+    "x1": 1538.931640625,
+    "y1": 218.68028259277344
+   },
+   "order": 2,
+   "text": "وزارة الثقافة\nمديرية التراث الوطني",
+   "html": null,
+   "image_path": null,
+   "lang": "ar",
+   "direction": "rtl",
+   "style": {
+    "align": "right",
+    "size_pt": 9.0,
+    "bold": null
+   },
+   "confidence": 0.9458,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:header",
+   "layout_score": 0.921,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "وزارة الثقافة\nمديرية التراث الوطني",
+     "html": null,
+     "confidence": 0.909621212121212,
+     "mean_logprob": null,
+     "seconds": 0.709
+    },
+    {
+     "engine": "paddleocr:arabic_PP-OCRv5_mobile_rec/en_PP-OCRv5_mobile_rec",
+     "text": "وزارة الثقافة\nمديرية التراث الوطني",
+     "html": null,
+     "confidence": 0.9625246127446493,
+     "mean_logprob": null,
+     "seconds": 0.726
+    }
+   ],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 41.0
+  },
+  {
+   "id": "b004",
+   "type": "doc_number",
+   "bbox": {
+    "x0": 165.7613983154297,
+    "y0": 357.0004577636719,
+    "x1": 410.7613983154297,
+    "y1": 386.0004577636719
+   },
+   "order": 3,
+   "text": "Ref. No.: 6/3223",
+   "html": null,
+   "image_path": null,
+   "lang": "en",
+   "direction": "ltr",
+   "style": {
+    "align": "left",
+    "size_pt": 6.5,
+    "bold": null
+   },
+   "confidence": 0.97,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:text",
+   "layout_score": 0.865,
+   "alternatives": [],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 29.0
+  },
+  {
+   "id": "b005",
+   "type": "date",
+   "bbox": {
+    "x0": 165.7613983154297,
+    "y0": 411.0004577636719,
+    "x1": 435.7613983154297,
+    "y1": 440.0004577636719
+   },
+   "order": 4,
+   "text": "Date: 07/05/2023",
+   "html": null,
+   "image_path": null,
+   "lang": "en",
+   "direction": "ltr",
+   "style": {
+    "align": "left",
+    "size_pt": 6.5,
+    "bold": null
+   },
+   "confidence": 0.97,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:text",
+   "layout_score": 0.865,
+   "alternatives": [],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 29.0
+  },
+  {
+   "id": "b006",
+   "type": "signature",
+   "bbox": {
+    "x0": 1317.034912109375,
+    "y0": 351.95745849609375,
+    "x1": 1532.67041015625,
+    "y1": 424.4028625488281
+   },
+   "order": 5,
+   "text": null,
+   "html": null,
+   "image_path": "synth_en_0108_mild_assets/r003_signature.png",
+   "lang": null,
+   "direction": null,
+   "style": {
+    "align": "right",
+    "size_pt": null,
+    "bold": null
+   },
+   "confidence": null,
+   "source_engine": null,
+   "layout_source": "PP-DocLayout_plus-L:text+colored:0.78",
+   "layout_score": 0.636,
+   "alternatives": [],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": null
+  },
+  {
+   "id": "b007",
+   "type": "title",
+   "bbox": {
+    "x0": 632.9874267578125,
+    "y0": 485.176025390625,
+    "x1": 1059.5169677734375,
+    "y1": 521.1154174804688
+   },
+   "order": 6,
+   "text": "Administrative Circular",
+   "html": null,
+   "image_path": null,
+   "lang": "en",
+   "direction": "ltr",
+   "style": {
+    "align": "center",
+    "size_pt": 7.0,
+    "bold": true
+   },
+   "confidence": 0.976,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:paragraph_title",
+   "layout_score": 0.803,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "Administrative Circular",
+     "html": null,
+     "confidence": 0.96,
+     "mean_logprob": null,
+     "seconds": 0.152
+    },
+    {
+     "engine": "paddleocr:arabic_PP-OCRv5_mobile_rec/en_PP-OCRv5_mobile_rec",
+     "text": "Administrative Circular",
+     "html": null,
+     "confidence": 0.9999625384807587,
+     "mean_logprob": null,
+     "seconds": 0.541
+    }
+   ],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 32.0
+  },
+  {
+   "id": "b008",
+   "type": "paragraph",
+   "bbox": {
+    "x0": 154.17355346679688,
+    "y0": 570.1500244140625,
+    "x1": 1504.8143310546875,
+    "y1": 653.0352172851562
+   },
+   "order": 7,
+   "text": "All departments are kindly requested to coordinate with the Museums and Antiquities\nDirectorate before starting any maintenance work.",
+   "html": null,
+   "image_path": null,
+   "lang": "en",
+   "direction": "ltr",
+   "style": {
+    "align": "left",
+    "size_pt": 8.0,
+    "bold": null
+   },
+   "confidence": 0.975,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:text",
+   "layout_score": 0.968,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "All departments are kindly requested to coordinate with the Museums and Antiquities\nDirectorate before starting any maintenance work.",
+     "html": null,
+     "confidence": 0.9583881427915518,
+     "mean_logprob": null,
+     "seconds": 0.654
+    },
+    {
+     "engine": "paddleocr:arabic_PP-OCRv5_mobile_rec/en_PP-OCRv5_mobile_rec",
+     "text": "All departments are kindly requested to coordinate with the Museums and Antiquities\nDirectorate before starting any maintenance work.",
+     "html": null,
+     "confidence": 0.9857814552431757,
+     "mean_logprob": null,
+     "seconds": 3.538
+    }
+   ],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 37.0
+  },
+  {
+   "id": "b009",
+   "type": "paragraph",
+   "bbox": {
+    "x0": 155.6992950439453,
+    "y0": 687.053466796875,
+    "x1": 1428.072998046875,
+    "y1": 773.1515502929688
+   },
+   "order": 8,
+   "text": "The restoration plan for the historical buildings in the old city has been approved\naccording to the annual budget.",
+   "html": null,
+   "image_path": null,
+   "lang": "en",
+   "direction": "ltr",
+   "style": {
+    "align": "left",
+    "size_pt": 8.5,
+    "bold": null
+   },
+   "confidence": 0.9753,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:text",
+   "layout_score": 0.95,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "The restoration plan for the historical buildings in the old city has been approved\naccording to the annual budget.",
+     "html": null,
+     "confidence": 0.9588558897243107,
+     "mean_logprob": null,
+     "seconds": 0.428
+    },
+    {
+     "engine": "paddleocr:arabic_PP-OCRv5_mobile_rec/en_PP-OCRv5_mobile_rec",
+     "text": "The restoration plan for the historical buildings in the old city has been approved\naccording to the annual budget.",
+     "html": null,
+     "confidence": 0.9806807152273362,
+     "mean_logprob": null,
+     "seconds": 1.355
+    }
+   ],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 38.0
+  },
+  {
+   "id": "b010",
+   "type": "table",
+   "bbox": {
+    "x0": 180.25277709960938,
+    "y0": 807.2047119140625,
+    "x1": 1514.2640380859375,
+    "y1": 1124.29833984375
+   },
+   "order": 9,
+   "text": null,
+   "html": "<table><tr><td rowspan=\"2\">No.</td><td rowspan=\"2\">Project</td><td rowspan=\"2\">Location</td><td colspan=\"2\">Cost (USD)</td></tr><tr><td>Approved</td><td>Spent</td></tr><tr><td>1</td><td>City Museum</td><td rowspan=\"2\">North District</td><td>35000</td><td>9000</td></tr><tr><td>2</td><td>Old Theatre</td><td>72000</td><td>4000</td></tr><tr><td>3</td><td>Heritage House</td><td>Old City</td><td>12000</td><td>2000</td></tr></table>",
+   "image_path": null,
+   "lang": "en",
+   "direction": "ltr",
+   "style": {
+    "align": "left",
+    "size_pt": 5.5,
+    "bold": null
+   },
+   "confidence": 0.9576,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:table",
+   "layout_score": 0.985,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": null,
+     "html": "<table><tr><td rowspan=\"2\">No.</td><td rowspan=\"2\">Project</td><td rowspan=\"2\">Location</td><td colspan=\"2\">Cost (USD)</td></tr><tr><td>Approved</td><td>Spent</td></tr><tr><td>1</td><td>City Museum</td><td rowspan=\"2\">North District</td><td>35000</td><td>9000</td></tr><tr><td>2</td><td>Old Theatre</td><td>72000</td><td>4000</td></tr><tr><td>3</td><td>Heritage House</td><td>Old City</td><td>12000</td><td>2000</td></tr></table>",
+     "confidence": 0.95755383290267,
+     "mean_logprob": null,
+     "seconds": 3.795
+    }
+   ],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 25.0
+  },
+  {
+   "id": "b011",
+   "type": "paragraph",
+   "bbox": {
+    "x0": 154.91366577148438,
+    "y0": 1169.3336181640625,
+    "x1": 1530.2353515625,
+    "y1": 1252.004150390625
+   },
+   "order": 10,
+   "text": "Please 0 ادا et [؟] سا and the proposed exhibition 0 Ian يدا later than the\nend of the current month.\n“مور",
+   "html": null,
+   "image_path": null,
+   "lang": "mixed",
+   "direction": "ltr",
+   "style": {
+    "align": "left",
+    "size_pt": 12.5,
+    "bold": null
+   },
+   "confidence": 0.661,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:text",
+   "layout_score": 0.955,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "Please 0 ادا et [؟] سا and the proposed exhibition 0 Ian يدا later than the\nend of the current month.\n“مور",
+     "html": null,
+     "confidence": 0.7752999084249085,
+     "mean_logprob": null,
+     "seconds": 1.618
+    },
+    {
+     "engine": "paddleocr:arabic_PP-OCRv5_mobile_rec/en_PP-OCRv5_mobile_rec",
+     "text": "the proposed exhibition plan no later than the\nend of the current month.\nOUTGOING",
+     "html": null,
+     "confidence": 0.8501790225002838,
+     "mean_logprob": null,
+     "seconds": 1.72
+    }
+   ],
+   "needs_review": true,
+   "review_reasons": [
+    "1 unreadable word(s) marked [؟]",
+    "confidence 0.66 < 0.75"
+   ],
+   "line_height_px": 58.5
+  },
+  {
+   "id": "b012",
+   "type": "paragraph",
+   "bbox": {
+    "x0": 156.61859130859375,
+    "y0": 1290.0294189453125,
+    "x1": 403.8519592285156,
+    "y1": 1322.8804931640625
+   },
+   "order": 11,
+   "text": "Yours sincerely,",
+   "html": null,
+   "image_path": null,
+   "lang": "en",
+   "direction": "ltr",
+   "style": {
+    "align": "left",
+    "size_pt": 8.0,
+    "bold": null
+   },
+   "confidence": 0.976,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:text",
+   "layout_score": 0.897,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "Yours sincerely,",
+     "html": null,
+     "confidence": 0.96,
+     "mean_logprob": null,
+     "seconds": 0.294
+    },
+    {
+     "engine": "paddleocr:arabic_PP-OCRv5_mobile_rec/en_PP-OCRv5_mobile_rec",
+     "text": "Yours sincerely,",
+     "html": null,
+     "confidence": 0.9999070167541504,
+     "mean_logprob": null,
+     "seconds": 0.136
+    }
+   ],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 36.0
+  },
+  {
+   "id": "b013",
+   "type": "stamp",
+   "bbox": {
+    "x0": 1067.0,
+    "y0": 1220.0,
+    "x1": 1410.0,
+    "y1": 1545.0
+   },
+   "order": 12,
+   "text": "OUTGOING\n[؟] Genera\nr Sami Abdutrahmar",
+   "html": null,
+   "image_path": "synth_en_0108_mild_assets/r002_stamp.png",
+   "lang": null,
+   "direction": null,
+   "style": {
+    "align": "right",
+    "size_pt": null,
+    "bold": null
+   },
+   "confidence": 0.6218181818181818,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:image+split:stamp",
+   "layout_score": 0.88,
+   "alternatives": [],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": null
+  },
+  {
+   "id": "b014",
+   "type": "handwritten_note",
+   "bbox": {
+    "x0": 1176.0,
+    "y0": 1434.0,
+    "x1": 1288.0,
+    "y1": 1457.0
+   },
+   "order": 13,
+   "text": "sue RN",
+   "html": null,
+   "image_path": null,
+   "lang": "en",
+   "direction": "ltr",
+   "style": {
+    "align": "right",
+    "size_pt": 6.0,
+    "bold": null
+   },
+   "confidence": 0.088,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:image+split:handwritten_note",
+   "layout_score": 0.88,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "sue RN",
+     "html": null,
+     "confidence": 0.23800000000000002,
+     "mean_logprob": null,
+     "seconds": 0.874
+    }
+   ],
+   "needs_review": true,
+   "review_reasons": [
+    "handwritten",
+    "confidence 0.09 < 0.75"
+   ],
+   "line_height_px": 28.0
+  },
+  {
+   "id": "b015",
+   "type": "footer",
+   "bbox": {
+    "x0": 666.1472778320312,
+    "y0": 2272.663330078125,
+    "x1": 1031.267333984375,
+    "y1": 2297.3837890625
+   },
+   "order": 14,
+   "text": "Tel: 06 4600000 - P.O. Box 1234",
+   "html": null,
+   "image_path": null,
+   "lang": "en",
+   "direction": "ltr",
+   "style": {
+    "align": "center",
+    "size_pt": 4.5,
+    "bold": null
+   },
+   "confidence": 0.9674,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:footer",
+   "layout_score": 0.912,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "Tel: 06 4600000 - P.O. Box 1234",
+     "html": null,
+     "confidence": 0.9456,
+     "mean_logprob": null,
+     "seconds": 0.24
+    },
+    {
+     "engine": "paddleocr:arabic_PP-OCRv5_mobile_rec/en_PP-OCRv5_mobile_rec",
+     "text": "Tel: 06 4600000 - P.O. Box 1234",
+     "html": null,
+     "confidence": 0.9720210134983063,
+     "mean_logprob": null,
+     "seconds": 0.855
+    }
+   ],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 21.0
+  }
+ ],
+ "metadata": {
+  "doc_numbers": [
+   {
+    "raw": "Ref. No.: 6/3223",
+    "value": "6/3223",
+    "value_latin": "6/3223",
+    "role": "self",
+    "block_id": "b004"
+   }
+  ],
+  "dates": [
+   {
+    "calendar": "gregorian",
+    "raw": "07/05/2023",
+    "normalized": "2023-05-07",
+    "block_id": "b005"
+   }
+  ],
+  "stamp_texts": [
+   {
+    "text": "OUTGOING\n[؟] Genera\nr Sami Abdutrahmar",
+    "block_id": "b013"
+   }
+  ],
+  "languages": [
+   "ar",
+   "en",
+   "mixed"
+  ],
+  "extra": {
+   "geometry_notes": [
+    "perspective-corrected",
+    "orientation:paddle:0@0.92,osd:0@8.45"
+   ],
+   "skew_deg": -0.0
+  }
+ },
+ "qa": {
+  "width_px": 1753,
+  "height_px": 2384,
+  "blur_laplacian_var": 259.69918118002005,
+  "glare_ratio": 0.0,
+  "document_coverage": 0.6207998843142148,
+  "estimated_dpi": 168.5762939453125,
+  "boundary_found": true,
+  "warnings": []
+ },
+ "review": {
+  "page_score": 0.9264,
+  "needs_review": true,
+  "reasons": [
+   "2 block(s) need review: b011(paragraph), b014(handwritten_note)"
+  ]
+ },
+ "timings_s": {
+  "load": 0.029,
+  "geometry": 1.6706,
+  "qa": 0.1289,
+  "illumination": 1.0107,
+  "layout": 4.811,
+  "recognition": 20.5362,
+  "postprocess": 0.0045,
+  "confidence": 0.0001,
+  "docx": 0.115,
+  "total": 28.306
+ },
+ "engines": {
+  "layout": "PP-DocLayout_plus-L",
+  "primary:tesseract": "tesseract-5.5.3:ara+eng"
+ },
+ "config_digest": "55d93566080a"
+}
