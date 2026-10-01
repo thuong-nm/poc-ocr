@@ -1,0 +1,84 @@
+# img2docx configuration. Every key is optional; defaults live in img2docx/config.py.
+# A profile supplies a preset first, and this file overrides it:
+#   dev-cpu     Tesseract primary + PaddleOCR cross-check; CPU only (default)
+#   dev-vlm     Qwen3-VL-2B (Ollama) primary + Tesseract cross-check; 4 GB GPU dev box
+#   gpu-server  Qwen3-VL-8B (vLLM) primary + PaddleOCR cross-check + UVDoc dewarping
+profile: dev-cpu
+
+runtime:
+  device: auto              # auto | cpu | cuda (for Paddle models; the VLM server picks its own device)
+  max_image_side: 5000      # larger photos are downscaled at load time
+  paddlex_cache: null       # default: ./models/paddlex  (env PADDLE_PDX_CACHE_HOME)
+  offline: true             # sets HF_HUB_OFFLINE=1 etc. at runtime; models come from download_models.sh
+
+qa:
+  min_blur_var: 60
+  min_long_side_px: 1500
+  max_glare_ratio: 0.02
+  min_coverage: 0.25
+
+geometry:
+  detect_boundary: true
+  dewarp: none              # none | uvdoc  (PaddlePaddle/UVDoc, Apache-2.0)
+  orientation: paddle       # paddle (PP-LCNet_x1_0_doc_ori) | tesseract (OSD) | heuristic | none
+  deskew: true
+  target_long_side_px: 2400 # ≈ 205 dpi for A4
+
+illumination:
+  enabled: true
+
+layout:
+  backend: paddle           # paddle | heuristic
+  model_name: PP-DocLayout_plus-L   # or PP-DocLayoutV3, PP-DocLayout-M, PP-DocLayout-S
+  model_dir: null           # explicit local dir for offline installs
+  threshold: 0.35
+  fill_uncovered_text: true
+  detect_ink_colors: true
+
+recognition:
+  primary: tesseract        # tesseract | paddle | vlm
+  secondary: paddle         # tesseract | paddle | vlm | none   (agreement score)
+  primary_by_type: {}       # e.g. {table: vlm, handwritten_note: vlm}
+  ocr_stamps_to_metadata: true
+  tesseract:
+    cmd: null               # path to the binary (env TESSERACT_CMD)
+    tessdata_dir: null      # e.g. ./models/tessdata_best
+    langs: ara+eng
+    unreadable_word_conf: 15
+  paddle:
+    rec_model_ar: arabic_PP-OCRv5_mobile_rec
+    rec_model_en: en_PP-OCRv5_mobile_rec
+    model_root: null        # dir containing <model_name>/ subdirs
+  vlm:
+    backend: openai         # openai (vLLM / llama.cpp / Ollama HTTP, all local) | transformers
+    base_url: http://localhost:11434/v1
+    model: qwen3-vl:2b-instruct-q4_K_M
+    model_path: Qwen/Qwen3-VL-2B-Instruct   # transformers backend (local dir or HF id from cache)
+    dtype: float16          # Turing GPUs (GTX 16xx / T4) have no bf16
+    load_in_4bit: false
+    # LoRA adapters, keyed by region type or "printed"/"handwritten":
+    #   vLLM:         `vllm serve ... --enable-lora --lora-modules printed=/models/lora/printed hw=/models/lora/hw`
+    #                 then  adapters: {printed: printed, handwritten: hw}
+    #   transformers: adapters: {printed: /models/lora/printed, handwritten: /models/lora/hw}
+    adapters: {}
+    max_tokens_min: 32
+    max_tokens_max: 2048
+    max_image_side: 1280
+    request_logprobs: true
+
+confidence:
+  w_engine: 0.6
+  w_agreement: 0.4
+  handwritten_penalty: 0.15
+  block_review_threshold: 0.75
+  page_review_threshold: 0.85
+
+docx:
+  font_cs: Simplified Arabic      # complex-script (Arabic) font
+  font_latin: Arial
+  default_size_pt: 13
+  highlight_low_confidence: false
+  comment_low_confidence: false
+  low_confidence_threshold: 0.75
+  insert_images: true
+  stamp_floating: true

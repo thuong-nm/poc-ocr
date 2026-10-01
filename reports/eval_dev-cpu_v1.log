@@ -1,0 +1,91 @@
+/home/eric/projects/ocr/.venv/lib/python3.11/site-packages/paddle/utils/cpp_extension/extension_utils.py:712: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `/home/eric/projects/ocr/models/paddlex/official_models/PP-DocLayout_plus-L`.[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `/home/eric/projects/ocr/models/paddlex/official_models/PP-LCNet_x1_0_doc_ori`.[0m
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `/home/eric/projects/ocr/models/paddlex/official_models/arabic_PP-OCRv5_mobile_rec`.[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `/home/eric/projects/ocr/models/paddlex/official_models/en_PP-OCRv5_mobile_rec`.[0m
+[1/36] synth_ar_0101_clean: page CER 0.162  TEDS 0.793  36.2s
+[2/36] synth_ar_0101_hard: page CER 0.254  TEDS 0.950  55.5s
+[3/36] synth_ar_0101_mild: page CER 0.108  TEDS 0.962  38.6s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[4/36] synth_ar_0102_clean: page CER 0.287  TEDS 0.665  43.0s
+[5/36] synth_ar_0102_hard: page CER 0.352  TEDS 0.500  58.7s
+[6/36] synth_ar_0102_mild: page CER 0.148  TEDS 0.577  46.4s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[7/36] synth_ar_0103_clean: page CER 0.298  TEDS 0.632  40.8s
+[8/36] synth_ar_0103_hard: page CER 0.308  TEDS 0.670  43.5s
+[9/36] synth_ar_0103_mild: page CER 0.315  TEDS 0.670  38.3s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[10/36] synth_ar_0104_clean: page CER 0.212  TEDS 0.812  40.3s
+[11/36] synth_ar_0104_hard: page CER 0.232  TEDS 0.962  40.0s
+[12/36] synth_ar_0104_mild: page CER 0.123  TEDS 1.000  29.9s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[13/36] synth_en_0105_clean: page CER 0.330  TEDS 1.000  37.5s
+[14/36] synth_en_0105_hard: page CER 0.136  TEDS 1.000  32.5s
+[15/36] synth_en_0105_mild: page CER 0.134  TEDS 1.000  31.2s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[16/36] synth_en_0106_clean: page CER 0.087  TEDS 1.000  35.8s
+[17/36] synth_en_0106_hard: page CER 0.095  TEDS 1.000  36.0s
+[18/36] synth_en_0106_mild: page CER 0.067  TEDS 1.000  32.4s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[19/36] synth_en_0107_clean: page CER 0.064  TEDS 1.000  26.6s
+[20/36] synth_en_0107_hard: page CER 0.093  TEDS 0.903  29.2s
+[21/36] synth_en_0107_mild: page CER 0.060  TEDS 1.000  29.4s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[22/36] synth_en_0108_clean: page CER 0.073  TEDS 1.000  26.5s
+[23/36] synth_en_0108_hard: page CER 0.149  TEDS 0.909  25.8s
+[24/36] synth_en_0108_mild: page CER 0.131  TEDS 1.000  28.3s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[25/36] synth_mixed_0109_clean: page CER 0.395  TEDS 0.613  36.7s
+[26/36] synth_mixed_0109_hard: page CER 0.452  TEDS 0.585  32.3s
+[27/36] synth_mixed_0109_mild: page CER 0.406  TEDS 0.631  36.4s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[28/36] synth_mixed_0110_clean: page CER 0.350  TEDS 0.596  35.4s
+[29/36] synth_mixed_0110_hard: page CER 0.186  TEDS 0.670  28.7s
+[30/36] synth_mixed_0110_mild: page CER 0.235  TEDS 0.703  30.1s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[31/36] synth_mixed_0111_clean: page CER 0.239  TEDS 0.517  33.1s
+[32/36] synth_mixed_0111_hard: page CER 0.213  TEDS 0.634  30.5s
+[33/36] synth_mixed_0111_mild: page CER 0.170  TEDS 0.535  30.5s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[34/36] synth_mixed_0112_clean: page CER 0.399  TEDS 0.554  43.8s
+[35/36] synth_mixed_0112_hard: page CER 0.359  TEDS 0.654  27.2s
+[36/36] synth_mixed_0112_mild: page CER 0.348  TEDS 0.689  34.6s
+# img2docx evaluation — dev-cpu — 36 pages
+
+Engines: `layout`=PP-DocLayout_plus-L, `primary:tesseract`=tesseract-5.5.3:ara+eng
+
+## Summary
+
+| metric | value |
+|---|---|
+| pages | 36 |
+| text blocks | 468 |
+| CER (micro, strict) | 0.210 |
+| CER (diacritics-insensitive) | 0.216 |
+| WER (mean) | 0.467 |
+| page CER (order-sensitive) | 0.221 |
+| block type accuracy | 0.735 |
+| table TEDS / TEDS-S | 0.788 / 1.000 (n=36) |
+| reading order Kendall τ | 0.804 |
+| date extraction acc | 0.400 |
+| doc-number extraction acc | 0.500 |
+| image element recall | logo 1.00, signature 0.14, stamp 0.75 |
+| pages flagged needs_review | 1.00 |
+| runtime s/page (mean) | 35.6 |
+
+## CER by block type
+
+| block type | n | CER | CER no-diac | WER | type acc |
+|---|---|---|---|---|---|
+| date | 60 | 0.452 | 0.454 | 0.639 | 0.58 |
+| doc_number | 36 | 0.518 | 0.518 | 0.528 | 0.53 |
+| footer | 36 | 0.410 | 0.410 | 0.509 | 0.78 |
+| handwritten_note | 36 | 0.714 | 0.714 | 1.259 | 0.39 |
+| header | 72 | 0.049 | 0.049 | 0.067 | 0.86 |
+| paragraph | 180 | 0.168 | 0.167 | 0.329 | 0.94 |
+| title | 48 | 0.374 | 0.476 | 0.698 | 0.35 |
+
+
+report: reports/eval_dev-cpu_v1.md  (1283s)

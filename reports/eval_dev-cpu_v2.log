@@ -1,0 +1,37 @@
+/home/eric/projects/ocr/.venv/lib/python3.11/site-packages/paddle/utils/cpp_extension/extension_utils.py:712: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `/home/eric/projects/ocr/models/paddlex/official_models/PP-DocLayout_plus-L`.[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `/home/eric/projects/ocr/models/paddlex/official_models/PP-LCNet_x1_0_doc_ori`.[0m
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `/home/eric/projects/ocr/models/paddlex/official_models/arabic_PP-OCRv5_mobile_rec`.[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `/home/eric/projects/ocr/models/paddlex/official_models/en_PP-OCRv5_mobile_rec`.[0m
+[1/36] synth_ar_0101_clean: page CER 0.162  TEDS 0.793  46.5s
+[2/36] synth_ar_0101_hard: page CER 0.101  TEDS 0.950  45.0s
+[3/36] synth_ar_0101_mild: page CER 0.074  TEDS 0.962  55.5s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[4/36] synth_ar_0102_clean: page CER 0.167  TEDS 0.665  55.9s
+[5/36] synth_ar_0102_hard: page CER 0.264  TEDS 0.500  91.3s
+[6/36] synth_ar_0102_mild: page CER 0.148  TEDS 0.577  82.0s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[7/36] synth_ar_0103_clean: page CER 0.236  TEDS 0.632  39.9s
+[8/36] synth_ar_0103_hard: page CER 0.217  TEDS 0.670  59.2s
+[9/36] synth_ar_0103_mild: page CER 0.200  TEDS 0.670  47.7s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[10/36] synth_ar_0104_clean: page CER 0.140  TEDS 0.812  37.2s
+[11/36] synth_ar_0104_hard: page CER 0.173  TEDS 0.962  35.5s
+[12/36] synth_ar_0104_mild: page CER 0.123  TEDS 1.000  34.1s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[13/36] synth_en_0105_clean: page CER 0.330  TEDS 1.000  49.1s
+[14/36] synth_en_0105_hard: page CER 0.133  TEDS 1.000  46.6s
+[15/36] synth_en_0105_mild: page CER 0.134  TEDS 1.000  41.5s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[16/36] synth_en_0106_clean: page CER 0.053  TEDS 1.000  26.1s
+[17/36] synth_en_0106_hard: page CER 0.095  TEDS 1.000  27.5s
+[18/36] synth_en_0106_mild: page CER 0.051  TEDS 1.000  27.7s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[19/36] synth_en_0107_clean: page CER 0.064  TEDS 1.000  20.7s
+[20/36] synth_en_0107_hard: page CER 0.093  TEDS 0.903  24.8s
+[21/36] synth_en_0107_mild: page CER 0.060  TEDS 1.000  19.8s
+WARNING:img2docx:QA: document boundary not detected; assuming the photo is already cropped
+[22/36] synth_en_0108_clean: page CER 0.088  TEDS 1.000  20.6s
+[23/36] synth_en_0108_hard: page CER 0.142  TEDS 0.909  22.8s

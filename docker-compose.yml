@@ -1,0 +1,33 @@
+# GPU server deployment: vLLM (Qwen3-VL-8B-Instruct) + img2docx API.
+# Pre-download the VLM once:  scripts/download_models.sh --vlm hf-8b --models-dir ./models
+services:
+  vllm:
+    image: vllm/vllm-openai:latest   # pin a tested tag in production
+    command: >
+      --model /models/Qwen3-VL-8B-Instruct --served-model-name Qwen/Qwen3-VL-8B-Instruct
+      --max-model-len 16384 --limit-mm-per-prompt '{"image":1}' --gpu-memory-utilization 0.85
+    # LoRA (later):  --enable-lora --lora-modules printed=/models/lora/printed hw=/models/lora/hw
+    environment:
+      HF_HUB_OFFLINE: "1"
+    volumes:
+      - ./models:/models:ro
+    deploy:
+      resources:
+        reservations:
+          devices: [{driver: nvidia, count: all, capabilities: [gpu]}]
+    ports: ["8000:8000"]
+
+  img2docx:
+    build: .
+    image: img2docx:gpu
+    command: serve --host 0.0.0.0 --port 8080 --profile gpu-server --config /app/config.yaml
+    volumes:
+      - ./config.gpu.yaml:/app/config.yaml:ro
+    environment:
+      IMG2DOCX_PROFILE: gpu-server
+    depends_on: [vllm]
+    deploy:
+      resources:
+        reservations:
+          devices: [{driver: nvidia, count: all, capabilities: [gpu]}]
+    ports: ["8080:8080"]

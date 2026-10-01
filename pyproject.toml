@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "img2docx"
+version = "1.0.0"
+description = "On-premise photo -> editable DOCX converter for Arabic/English official documents"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy",
+  "opencv-python-headless",
+  "pillow>=11",
+  "pillow-heif",
+  "pydantic>=2.6",
+  "pyyaml",
+  "python-docx>=1.2",
+  "lxml",
+  "beautifulsoup4",
+  "rapidfuzz",
+  "pytesseract",
+  "httpx",
+]
+
+[project.optional-dependencies]
+paddle = ["paddlepaddle==3.3.1", "paddleocr==3.7.0"]
+api = ["fastapi", "uvicorn", "python-multipart"]
+transformers = ["torch", "torchvision", "transformers>=4.57", "accelerate", "peft"]
+dev = ["pytest", "jiwer", "pymupdf"]
+
+[project.scripts]
+img2docx = "img2docx.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["img2docx*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "slow: end-to-end tests that run OCR engines (still CPU-only)",
+  "vlm: needs a running local VLM server (Ollama / vLLM)",
+  "libreoffice: needs LibreOffice for DOCX->PDF rendering",
+]

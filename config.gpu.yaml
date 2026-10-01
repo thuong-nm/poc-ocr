@@ -1,0 +1,6 @@
+# Used by docker-compose: the vLLM service is reachable as http://vllm:8000/v1
+profile: gpu-server
+recognition:
+  vlm:
+    base_url: http://vllm:8000/v1
+    model: Qwen/Qwen3-VL-8B-Instruct

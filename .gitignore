@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/
+out/
+dbg/
+models/
+*.egg-info/
+.env
+*.docx
+*.pdf
+scratch*

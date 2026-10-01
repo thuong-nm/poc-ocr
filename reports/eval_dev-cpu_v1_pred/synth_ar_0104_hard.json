@@ -1,0 +1,738 @@
+{
+ "schema_version": "1.0.0",
+ "source": {
+  "path": "data/synth/synth_ar_0104_hard.jpg",
+  "sha256": "1dcb353691122022017f420a8caf54f1ce2c8b28dbaa1de4392128adbba0ae48",
+  "width_px": 1869,
+  "height_px": 2543
+ },
+ "page": {
+  "width_px": 1697,
+  "height_px": 2400,
+  "width_mm": 210.0,
+  "height_mm": 297.0,
+  "dpi": 205.3,
+  "direction": "rtl",
+  "rotation_applied": 0,
+  "paper": "A4"
+ },
+ "blocks": [
+  {
+   "id": "b001",
+   "type": "header",
+   "bbox": {
+    "x0": 1359.7142333984375,
+    "y0": 116.86614227294922,
+    "x1": 1538.96240234375,
+    "y1": 156.6304168701172
+   },
+   "order": 0,
+   "text": "وزارة الثقافة",
+   "html": null,
+   "image_path": null,
+   "lang": "ar",
+   "direction": "rtl",
+   "style": {
+    "align": "right",
+    "size_pt": 8.0,
+    "bold": null
+   },
+   "confidence": 0.947,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:header",
+   "layout_score": 0.354,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "وزارة الثقافة",
+     "html": null,
+     "confidence": 0.9116666666666668,
+     "mean_logprob": null,
+     "seconds": 0.314
+    },
+    {
+     "engine": "paddleocr:arabic_PP-OCRv5_mobile_rec/en_PP-OCRv5_mobile_rec",
+     "text": "وزارة الثقافة",
+     "html": null,
+     "confidence": 0.9757446050643921,
+     "mean_logprob": null,
+     "seconds": 0.402
+    }
+   ],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 37.0
+  },
+  {
+   "id": "b002",
+   "type": "logo",
+   "bbox": {
+    "x0": 750.4246215820312,
+    "y0": 92.69479370117188,
+    "x1": 950.0385131835938,
+    "y1": 291.3149719238281
+   },
+   "order": 1,
+   "text": null,
+   "html": null,
+   "image_path": "synth_ar_0104_hard_assets/r001_logo.png",
+   "lang": null,
+   "direction": null,
+   "style": {
+    "align": "center",
+    "size_pt": null,
+    "bold": null
+   },
+   "confidence": null,
+   "source_engine": null,
+   "layout_source": "PP-DocLayout_plus-L:image",
+   "layout_score": 0.365,
+   "alternatives": [],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": null
+  },
+  {
+   "id": "b003",
+   "type": "header",
+   "bbox": {
+    "x0": 156.83615112304688,
+    "y0": 116.50276947021484,
+    "x1": 595.583251953125,
+    "y1": 198.57432556152344
+   },
+   "order": 2,
+   "text": "Ministry of Culture\nNational Heritage Directorate",
+   "html": null,
+   "image_path": null,
+   "lang": "en",
+   "direction": "ltr",
+   "style": {
+    "align": "left",
+    "size_pt": 7.5,
+    "bold": null
+   },
+   "confidence": 0.976,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:header",
+   "layout_score": 0.853,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "Ministry of Culture\nNational Heritage Directorate",
+     "html": null,
+     "confidence": 0.96,
+     "mean_logprob": null,
+     "seconds": 0.773
+    },
+    {
+     "engine": "paddleocr:arabic_PP-OCRv5_mobile_rec/en_PP-OCRv5_mobile_rec",
+     "text": "Ministry of Culture\nNational Heritage Directorate",
+     "html": null,
+     "confidence": 0.9794011556853851,
+     "mean_logprob": null,
+     "seconds": 1.376
+    }
+   ],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 33.5
+  },
+  {
+   "id": "b004",
+   "type": "paragraph",
+   "bbox": {
+    "x0": 1234.0,
+    "y0": 180.0,
+    "x1": 1535.0,
+    "y1": 225.0
+   },
+   "order": 3,
+   "text": "مديرية التراث الوطني",
+   "html": null,
+   "image_path": null,
+   "lang": "ar",
+   "direction": "rtl",
+   "style": {
+    "align": "right",
+    "size_pt": 10.0,
+    "bold": null
+   },
+   "confidence": 0.946,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "heuristic:lines",
+   "layout_score": 0.4,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "مديرية التراث الوطني",
+     "html": null,
+     "confidence": 0.9099999999999999,
+     "mean_logprob": null,
+     "seconds": 0.565
+    },
+    {
+     "engine": "paddleocr:arabic_PP-OCRv5_mobile_rec/en_PP-OCRv5_mobile_rec",
+     "text": "مديرية التراث الوطني",
+     "html": null,
+     "confidence": 0.9441360235214233,
+     "mean_logprob": null,
+     "seconds": 1.105
+    }
+   ],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 45.0
+  },
+  {
+   "id": "b005",
+   "type": "doc_number",
+   "bbox": {
+    "x0": 1360.164306640625,
+    "y0": 358.6911315917969,
+    "x1": 1533.164306640625,
+    "y1": 396.6911315917969
+   },
+   "order": 4,
+   "text": "الرقم: 2/5501",
+   "html": null,
+   "image_path": null,
+   "lang": "ar",
+   "direction": "rtl",
+   "style": {
+    "align": "right",
+    "size_pt": 8.5,
+    "bold": null
+   },
+   "confidence": 0.8502,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:text",
+   "layout_score": 0.95,
+   "alternatives": [],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 38.0
+  },
+  {
+   "id": "b006",
+   "type": "handwritten_note",
+   "bbox": {
+    "x0": 163.33131408691406,
+    "y0": 347.0956115722656,
+    "x1": 257.2295837402344,
+    "y1": 393.0286865234375
+   },
+   "order": 5,
+   "text": "",
+   "html": null,
+   "image_path": null,
+   "lang": null,
+   "direction": "rtl",
+   "style": {
+    "align": "left",
+    "size_pt": 10.0,
+    "bold": null
+   },
+   "confidence": 0.0,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:text+colored:0.78",
+   "layout_score": 0.66,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "",
+     "html": null,
+     "confidence": 0.0,
+     "mean_logprob": null,
+     "seconds": 0.64
+    }
+   ],
+   "needs_review": true,
+   "review_reasons": [
+    "handwritten",
+    "empty transcription",
+    "confidence 0.00 < 0.75"
+   ],
+   "line_height_px": 46.0
+  },
+  {
+   "id": "b007",
+   "type": "date",
+   "bbox": {
+    "x0": 1231.164306640625,
+    "y0": 412.6911315917969,
+    "x1": 1533.164306640625,
+    "y1": 450.6911315917969
+   },
+   "order": 6,
+   "text": "التاريخ: 04/03/1444 ه",
+   "html": null,
+   "image_path": null,
+   "lang": "ar",
+   "direction": "rtl",
+   "style": {
+    "align": "right",
+    "size_pt": 8.5,
+    "bold": null
+   },
+   "confidence": 0.8502,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:text",
+   "layout_score": 0.95,
+   "alternatives": [],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 38.0
+  },
+  {
+   "id": "b008",
+   "type": "date",
+   "bbox": {
+    "x0": 1231.164306640625,
+    "y0": 466.6911315917969,
+    "x1": 1533.164306640625,
+    "y1": 503.6911315917969
+   },
+   "order": 7,
+   "text": "الموافق: 06/01/2024 م",
+   "html": null,
+   "image_path": null,
+   "lang": "ar",
+   "direction": "rtl",
+   "style": {
+    "align": "right",
+    "size_pt": 8.5,
+    "bold": null
+   },
+   "confidence": 0.8502,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:text",
+   "layout_score": 0.95,
+   "alternatives": [],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 38.0
+  },
+  {
+   "id": "b009",
+   "type": "title",
+   "bbox": {
+    "x0": 687.2550659179688,
+    "y0": 533.2327880859375,
+    "x1": 1017.8385620117188,
+    "y1": 589.3899536132812
+   },
+   "order": 8,
+   "text": "eae adj alll pute",
+   "html": null,
+   "image_path": null,
+   "lang": "en",
+   "direction": "ltr",
+   "style": {
+    "align": "center",
+    "size_pt": 11.5,
+    "bold": true
+   },
+   "confidence": 0.3056,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:paragraph_title",
+   "layout_score": 0.38,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "eae adj alll pute",
+     "html": null,
+     "confidence": 0.5092857142857143,
+     "mean_logprob": null,
+     "seconds": 0.912
+    },
+    {
+     "engine": "paddleocr:arabic_PP-OCRv5_mobile_rec/en_PP-OCRv5_mobile_rec",
+     "text": "",
+     "html": null,
+     "confidence": 0.0,
+     "mean_logprob": null,
+     "seconds": 0.608
+    }
+   ],
+   "needs_review": true,
+   "review_reasons": [
+    "engines disagree (agreement 0.00)",
+    "confidence 0.31 < 0.75"
+   ],
+   "line_height_px": 52.0
+  },
+  {
+   "id": "b010",
+   "type": "paragraph",
+   "bbox": {
+    "x0": 763.4862670898438,
+    "y0": 622.400634765625,
+    "x1": 938.0003662109375,
+    "y1": 670.361572265625
+   },
+   "order": 9,
+   "text": "",
+   "html": null,
+   "image_path": null,
+   "lang": null,
+   "direction": "rtl",
+   "style": {
+    "align": "center",
+    "size_pt": 10.0,
+    "bold": null
+   },
+   "confidence": 0.0,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:text",
+   "layout_score": 0.659,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "",
+     "html": null,
+     "confidence": 0.0,
+     "mean_logprob": null,
+     "seconds": 0.682
+    },
+    {
+     "engine": "paddleocr:arabic_PP-OCRv5_mobile_rec/en_PP-OCRv5_mobile_rec",
+     "text": "تعميم إداري",
+     "html": null,
+     "confidence": 0.9951083660125732,
+     "mean_logprob": null,
+     "seconds": 0.608
+    }
+   ],
+   "needs_review": true,
+   "review_reasons": [
+    "engines disagree (agreement 0.00)",
+    "empty transcription",
+    "confidence 0.00 < 0.75"
+   ],
+   "line_height_px": 45.0
+  },
+  {
+   "id": "b011",
+   "type": "paragraph",
+   "bbox": {
+    "x0": 425.757080078125,
+    "y0": 702.6376342773438,
+    "x1": 1544.156005859375,
+    "y1": 746.4012451171875
+   },
+   "order": 10,
+   "text": "تم تخصيص مبلغ 30000 ديناراً لصيانة المسرح الوطني, على أن تنتهي الأعمال خلال 104 يوماً.",
+   "html": null,
+   "image_path": null,
+   "lang": "ar",
+   "direction": "rtl",
+   "style": {
+    "align": "right",
+    "size_pt": 10.0,
+    "bold": null
+   },
+   "confidence": 0.8621,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:text",
+   "layout_score": 0.575,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "تم تخصيص مبلغ 30000 ديناراً لصيانة المسرح الوطني, على أن تنتهي الأعمال خلال 104 يوماً.",
+     "html": null,
+     "confidence": 0.8884722222222222,
+     "mean_logprob": null,
+     "seconds": 0.756
+    },
+    {
+     "engine": "paddleocr:arabic_PP-OCRv5_mobile_rec/en_PP-OCRv5_mobile_rec",
+     "text": "تم تخصيص مبلغ دينارا لصيانة المسرح الوطني،على أن تنتهي لأعال اً",
+     "html": null,
+     "confidence": 0.7643042008082072,
+     "mean_logprob": null,
+     "seconds": 1.182
+    }
+   ],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 47.0
+  },
+  {
+   "id": "b012",
+   "type": "paragraph",
+   "bbox": {
+    "x0": 316.1393737792969,
+    "y0": 774.9015502929688,
+    "x1": 1541.952392578125,
+    "y1": 813.8522338867188
+   },
+   "order": 11,
+   "text": "وقد تمت الموافقة على خطة ترميم المباني التاريخية في المدينة القديمة وفقاً للميزانية المعتمدة لهذا العام.",
+   "html": null,
+   "image_path": null,
+   "lang": "ar",
+   "direction": "rtl",
+   "style": {
+    "align": "right",
+    "size_pt": 10.0,
+    "bold": null
+   },
+   "confidence": 0.8359,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:text",
+   "layout_score": 0.517,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "وقد تمت الموافقة على خطة ترميم المباني التاريخية في المدينة القديمة وفقاً للميزانية المعتمدة لهذا العام.",
+     "html": null,
+     "confidence": 0.908314606741573,
+     "mean_logprob": null,
+     "seconds": 0.564
+    },
+    {
+     "engine": "paddleocr:arabic_PP-OCRv5_mobile_rec/en_PP-OCRv5_mobile_rec",
+     "text": "وقد تمت الموافقة على خطة ترميم المباني التارخة المة القديمة وفقا لئة الة العام",
+     "html": null,
+     "confidence": 0.7549934784571329,
+     "mean_logprob": null,
+     "seconds": 1.393
+    }
+   ],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 46.0
+  },
+  {
+   "id": "b013",
+   "type": "table",
+   "bbox": {
+    "x0": 184.3989715576172,
+    "y0": 845.8526611328125,
+    "x1": 1518.4931640625,
+    "y1": 1162.746826171875
+   },
+   "order": 12,
+   "text": null,
+   "html": "<table><tr><td rowspan=\"2\">م</td><td rowspan=\"2\">اسم المشروع</td><td rowspan=\"2\">الموقع</td><td colspan=\"2\">التكلفة (بالدينار)</td></tr><tr><td>المعتمدة</td><td></td></tr><tr><td>1</td><td>المكتبة العامة</td><td rowspan=\"2\">المنطقة الشمالية</td><td>82000</td><td>1000</td></tr><tr><td>2</td><td>المسرح القديم</td><td>22000</td><td>1000</td></tr><tr><td>3</td><td>بيت التراث</td><td>المدينة القديمة</td><td>86000</td><td>2000</td></tr></table>",
+   "image_path": null,
+   "lang": "ar",
+   "direction": "rtl",
+   "style": {
+    "align": "right",
+    "size_pt": 6.0,
+    "bold": null
+   },
+   "confidence": 0.9242,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:table",
+   "layout_score": 0.98,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": null,
+     "html": "<table><tr><td rowspan=\"2\">م</td><td rowspan=\"2\">اسم المشروع</td><td rowspan=\"2\">الموقع</td><td colspan=\"2\">التكلفة (بالدينار)</td></tr><tr><td>المعتمدة</td><td></td></tr><tr><td>1</td><td>المكتبة العامة</td><td rowspan=\"2\">المنطقة الشمالية</td><td>82000</td><td>1000</td></tr><tr><td>2</td><td>المسرح القديم</td><td>22000</td><td>1000</td></tr><tr><td>3</td><td>بيت التراث</td><td>المدينة القديمة</td><td>86000</td><td>2000</td></tr></table>",
+     "confidence": 0.9241556199944766,
+     "mean_logprob": null,
+     "seconds": 7.178
+    }
+   ],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 28.0
+  },
+  {
+   "id": "b014",
+   "type": "paragraph",
+   "bbox": {
+    "x0": 509.1490783691406,
+    "y0": 1207.9224853515625,
+    "x1": 1543.9774169921875,
+    "y1": 1318.87890625
+   },
+   "order": 13,
+   "text": "كما نود الإشارة إلى ضرورة التنسيق مع إدارة المتاحف والآثار قبل البدء في أعمال الصيانة.\nوتفضلوا بقبول فائق الاحترام والتقدير,\naal a4",
+   "html": null,
+   "image_path": null,
+   "lang": "ar",
+   "direction": "rtl",
+   "style": {
+    "align": "right",
+    "size_pt": 8.5,
+    "bold": null
+   },
+   "confidence": 0.8993,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:text",
+   "layout_score": 0.477,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "كما نود الإشارة إلى ضرورة التنسيق مع إدارة المتاحف والآثار قبل البدء في أعمال الصيانة.\nوتفضلوا بقبول فائق الاحترام والتقدير,\naal a4",
+     "html": null,
+     "confidence": 0.9116730091613812,
+     "mean_logprob": null,
+     "seconds": 1.964
+    },
+    {
+     "engine": "paddleocr:arabic_PP-OCRv5_mobile_rec/en_PP-OCRv5_mobile_rec",
+     "text": "كما نود الإشارة إلى ضرورة التنسيق مع إاة المتاحف والآتار قبل البفي أعال الصيانة\nوتفضلوا بقبول فائق الاحترام والتقدي،\nباد",
+     "html": null,
+     "confidence": 0.881880482963923,
+     "mean_logprob": null,
+     "seconds": 2.543
+    }
+   ],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 40.0
+  },
+  {
+   "id": "b015",
+   "type": "figure",
+   "bbox": {
+    "x0": 298.53265380859375,
+    "y0": 1274.98681640625,
+    "x1": 831.870361328125,
+    "y1": 1590.6097412109375
+   },
+   "order": 14,
+   "text": null,
+   "html": null,
+   "image_path": "synth_ar_0104_hard_assets/r002_figure.png",
+   "lang": null,
+   "direction": null,
+   "style": {
+    "align": "left",
+    "size_pt": null,
+    "bold": null
+   },
+   "confidence": null,
+   "source_engine": null,
+   "layout_source": "PP-DocLayout_plus-L:image",
+   "layout_score": 0.876,
+   "alternatives": [],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": null
+  },
+  {
+   "id": "b016",
+   "type": "footer",
+   "bbox": {
+    "x0": 683.8619384765625,
+    "y0": 2277.793212890625,
+    "x1": 1013.1307373046875,
+    "y1": 2306.38427734375
+   },
+   "order": 15,
+   "text": "هاتف: 06 4600000 - ص.ب 1234",
+   "html": null,
+   "image_path": null,
+   "lang": "ar",
+   "direction": "rtl",
+   "style": {
+    "align": "center",
+    "size_pt": 6.0,
+    "bold": null
+   },
+   "confidence": 0.8233,
+   "source_engine": "tesseract-5.5.3:ara+eng",
+   "layout_source": "PP-DocLayout_plus-L:footer",
+   "layout_score": 0.88,
+   "alternatives": [
+    {
+     "engine": "tesseract-5.5.3:ara+eng",
+     "text": "هاتف: 06 4600000 - ص.ب 1234",
+     "html": null,
+     "confidence": 0.9277272727272726,
+     "mean_logprob": null,
+     "seconds": 0.354
+    },
+    {
+     "engine": "paddleocr:arabic_PP-OCRv5_mobile_rec/en_PP-OCRv5_mobile_rec",
+     "text": "هاتف 006صب",
+     "html": null,
+     "confidence": 0.846340537071228,
+     "mean_logprob": null,
+     "seconds": 2.002
+    }
+   ],
+   "needs_review": false,
+   "review_reasons": [],
+   "line_height_px": 28.0
+  }
+ ],
+ "metadata": {
+  "doc_numbers": [
+   {
+    "raw": "الرقم: 2/5501",
+    "value": "2/5501",
+    "value_latin": "2/5501",
+    "role": "self",
+    "block_id": "b005"
+   }
+  ],
+  "dates": [
+   {
+    "calendar": "hijri",
+    "raw": "04/03/1444 ه",
+    "normalized": "1444-03-04",
+    "block_id": "b007"
+   },
+   {
+    "calendar": "gregorian",
+    "raw": "06/01/2024 م",
+    "normalized": "2024-01-06",
+    "block_id": "b008"
+   }
+  ],
+  "stamp_texts": [],
+  "languages": [
+   "ar",
+   "en"
+  ],
+  "extra": {
+   "geometry_notes": [
+    "perspective-corrected",
+    "orientation:paddle:0@0.92,osd:0@15.10"
+   ],
+   "skew_deg": -0.0
+  }
+ },
+ "qa": {
+  "width_px": 1869,
+  "height_px": 2543,
+  "blur_laplacian_var": 310.895967260358,
+  "glare_ratio": 0.0,
+  "document_coverage": 0.6240267959030091,
+  "estimated_dpi": 180.23464965820312,
+  "boundary_found": true,
+  "warnings": []
+ },
+ "review": {
+  "page_score": 0.8886,
+  "needs_review": true,
+  "reasons": [
+   "3 block(s) need review: b006(handwritten_note), b009(title), b010(paragraph)"
+  ]
+ },
+ "timings_s": {
+  "load": 0.0424,
+  "geometry": 2.1775,
+  "qa": 0.0802,
+  "illumination": 0.2097,
+  "layout": 9.3053,
+  "recognition": 27.9686,
+  "postprocess": 0.0137,
+  "confidence": 0.0001,
+  "docx": 0.2308,
+  "total": 40.0283
+ },
+ "engines": {
+  "layout": "PP-DocLayout_plus-L",
+  "primary:tesseract": "tesseract-5.5.3:ara+eng"
+ },
+ "config_digest": "a8839b55439a"
+}
